@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPromotions));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
@@ -39,8 +40,8 @@
             this.rdoJuiceBar = new System.Windows.Forms.RadioButton();
             this.rdoMembership = new System.Windows.Forms.RadioButton();
             this.rdoTraining = new System.Windows.Forms.RadioButton();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblMemberId = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.mtbMemberId = new System.Windows.Forms.MaskedTextBox();
@@ -52,6 +53,7 @@
             this.picDepartment = new System.Windows.Forms.PictureBox();
             this.rtfWelcome = new System.Windows.Forms.RichTextBox();
             this.txtPromotion = new System.Windows.Forms.TextBox();
+            this.printForm1 = new Microsoft.VisualBasic.PowerPacks.Printing.PrintForm(this.components);
             this.grpDepartment.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picDepartment)).BeginInit();
             this.SuspendLayout();
@@ -119,6 +121,7 @@
             this.rdoClothing.TabStop = true;
             this.rdoClothing.Text = "&Clothing";
             this.rdoClothing.UseVisualStyleBackColor = true;
+            this.rdoClothing.CheckedChanged += new System.EventHandler(this.rdoClothing_CheckedChanged);
             // 
             // rdoEquipment
             // 
@@ -130,6 +133,7 @@
             this.rdoEquipment.TabStop = true;
             this.rdoEquipment.Text = "E&quipment/Accessories";
             this.rdoEquipment.UseVisualStyleBackColor = true;
+            this.rdoEquipment.CheckedChanged += new System.EventHandler(this.rdoEquipment_CheckedChanged);
             // 
             // rdoJuiceBar
             // 
@@ -141,6 +145,7 @@
             this.rdoJuiceBar.TabStop = true;
             this.rdoJuiceBar.Text = "&Juice Bar";
             this.rdoJuiceBar.UseVisualStyleBackColor = true;
+            this.rdoJuiceBar.CheckedChanged += new System.EventHandler(this.rdoJuiceBar_CheckedChanged);
             // 
             // rdoMembership
             // 
@@ -152,6 +157,7 @@
             this.rdoMembership.TabStop = true;
             this.rdoMembership.Text = "&Membership";
             this.rdoMembership.UseVisualStyleBackColor = true;
+            this.rdoMembership.CheckedChanged += new System.EventHandler(this.rdoMembership_CheckedChanged);
             // 
             // rdoTraining
             // 
@@ -163,24 +169,25 @@
             this.rdoTraining.TabStop = true;
             this.rdoTraining.Text = "Personal &Training";
             this.rdoTraining.UseVisualStyleBackColor = true;
+            this.rdoTraining.CheckedChanged += new System.EventHandler(this.rdoTraining_CheckedChanged);
             // 
-            // label3
+            // lblName
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(294, 124);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 17);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "&Name";
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(294, 124);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(45, 17);
+            this.lblName.TabIndex = 0;
+            this.lblName.Text = "&Name";
             // 
-            // label4
+            // lblMemberId
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(294, 165);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(76, 17);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Member &ID";
+            this.lblMemberId.AutoSize = true;
+            this.lblMemberId.Location = new System.Drawing.Point(294, 165);
+            this.lblMemberId.Name = "lblMemberId";
+            this.lblMemberId.Size = new System.Drawing.Size(76, 17);
+            this.lblMemberId.TabIndex = 2;
+            this.lblMemberId.Text = "Member &ID";
             // 
             // txtName
             // 
@@ -207,6 +214,7 @@
             this.btnSignIn.TabIndex = 4;
             this.btnSignIn.Text = "&Sign In";
             this.btnSignIn.UseVisualStyleBackColor = true;
+            this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
             // btnPrint
             // 
@@ -216,6 +224,7 @@
             this.btnPrint.TabIndex = 8;
             this.btnPrint.Text = "&Print";
             this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnClear
             // 
@@ -226,6 +235,7 @@
             this.btnClear.TabIndex = 7;
             this.btnClear.Text = "C&lear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnExit
             // 
@@ -235,6 +245,7 @@
             this.btnExit.TabIndex = 9;
             this.btnExit.Text = "E&xit";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // chkImageVisible
             // 
@@ -246,6 +257,7 @@
             this.chkImageVisible.TabIndex = 6;
             this.chkImageVisible.Text = "Image &Visible";
             this.chkImageVisible.UseVisualStyleBackColor = true;
+            this.chkImageVisible.CheckedChanged += new System.EventHandler(this.chkImageVisible_CheckedChanged);
             // 
             // picDepartment
             // 
@@ -272,6 +284,14 @@
             this.txtPromotion.Size = new System.Drawing.Size(348, 22);
             this.txtPromotion.TabIndex = 15;
             // 
+            // printForm1
+            // 
+            this.printForm1.DocumentName = "document";
+            this.printForm1.Form = this;
+            this.printForm1.PrintAction = System.Drawing.Printing.PrintAction.PrintToPreview;
+            this.printForm1.PrinterSettings = ((System.Drawing.Printing.PrinterSettings)(resources.GetObject("printForm1.PrinterSettings")));
+            this.printForm1.PrintFileName = null;
+            // 
             // frmPromotions
             // 
             this.AcceptButton = this.btnSignIn;
@@ -289,8 +309,8 @@
             this.Controls.Add(this.btnSignIn);
             this.Controls.Add(this.mtbMemberId);
             this.Controls.Add(this.txtName);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblMemberId);
+            this.Controls.Add(this.lblName);
             this.Controls.Add(this.grpDepartment);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -300,6 +320,7 @@
             this.Name = "frmPromotions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Promotions";
+            this.Load += new System.EventHandler(this.frmPromotions_Load);
             this.grpDepartment.ResumeLayout(false);
             this.grpDepartment.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picDepartment)).EndInit();
@@ -320,8 +341,8 @@
         private System.Windows.Forms.RadioButton rdoJuiceBar;
         private System.Windows.Forms.RadioButton rdoEquipment;
         private System.Windows.Forms.RadioButton rdoClothing;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblMemberId;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.MaskedTextBox mtbMemberId;
@@ -333,6 +354,7 @@
         private System.Windows.Forms.PictureBox picDepartment;
         private System.Windows.Forms.RichTextBox rtfWelcome;
         private System.Windows.Forms.TextBox txtPromotion;
+        private Microsoft.VisualBasic.PowerPacks.Printing.PrintForm printForm1;
     }
 }
 
