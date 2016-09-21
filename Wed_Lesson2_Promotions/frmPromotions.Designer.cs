@@ -48,10 +48,12 @@
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.chbImageVisible = new System.Windows.Forms.CheckBox();
-            this.pcbDepartment = new System.Windows.Forms.PictureBox();
+            this.chkImageVisible = new System.Windows.Forms.CheckBox();
+            this.picDepartment = new System.Windows.Forms.PictureBox();
+            this.rtfWelcome = new System.Windows.Forms.RichTextBox();
+            this.txtPromotion = new System.Windows.Forms.TextBox();
             this.grpDepartment.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbDepartment)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDepartment)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -61,7 +63,7 @@
             this.label1.Location = new System.Drawing.Point(166, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(323, 29);
-            this.label1.TabIndex = 0;
+            this.label1.TabIndex = 10;
             this.label1.Text = "Look Sharp Fitness Center";
             // 
             // label2
@@ -71,7 +73,7 @@
             this.label2.Location = new System.Drawing.Point(556, 473);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 17);
-            this.label2.TabIndex = 1;
+            this.label2.TabIndex = 11;
             this.label2.Text = "Anju Chawla";
             // 
             // shapeContainer1
@@ -82,7 +84,7 @@
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape1});
             this.shapeContainer1.Size = new System.Drawing.Size(655, 499);
-            this.shapeContainer1.TabIndex = 2;
+            this.shapeContainer1.TabIndex = 12;
             this.shapeContainer1.TabStop = false;
             // 
             // lineShape1
@@ -103,7 +105,7 @@
             this.grpDepartment.Location = new System.Drawing.Point(26, 99);
             this.grpDepartment.Name = "grpDepartment";
             this.grpDepartment.Size = new System.Drawing.Size(233, 186);
-            this.grpDepartment.TabIndex = 3;
+            this.grpDepartment.TabIndex = 5;
             this.grpDepartment.TabStop = false;
             this.grpDepartment.Text = "Department";
             // 
@@ -168,7 +170,7 @@
             this.label3.Location = new System.Drawing.Point(294, 124);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 17);
-            this.label3.TabIndex = 4;
+            this.label3.TabIndex = 0;
             this.label3.Text = "&Name";
             // 
             // label4
@@ -177,15 +179,15 @@
             this.label4.Location = new System.Drawing.Point(294, 165);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 17);
-            this.label4.TabIndex = 5;
+            this.label4.TabIndex = 2;
             this.label4.Text = "Member &ID";
             // 
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(398, 121);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(245, 22);
-            this.txtName.TabIndex = 6;
+            this.txtName.Size = new System.Drawing.Size(236, 22);
+            this.txtName.TabIndex = 1;
             this.toolTip1.SetToolTip(this.txtName, "Enter your name");
             // 
             // mtbMemberId
@@ -194,7 +196,7 @@
             this.mtbMemberId.Mask = "00000";
             this.mtbMemberId.Name = "mtbMemberId";
             this.mtbMemberId.Size = new System.Drawing.Size(45, 22);
-            this.mtbMemberId.TabIndex = 7;
+            this.mtbMemberId.TabIndex = 3;
             this.mtbMemberId.ValidatingType = typeof(int);
             // 
             // btnSignIn
@@ -202,25 +204,26 @@
             this.btnSignIn.Location = new System.Drawing.Point(538, 312);
             this.btnSignIn.Name = "btnSignIn";
             this.btnSignIn.Size = new System.Drawing.Size(96, 30);
-            this.btnSignIn.TabIndex = 8;
+            this.btnSignIn.TabIndex = 4;
             this.btnSignIn.Text = "&Sign In";
             this.btnSignIn.UseVisualStyleBackColor = true;
             // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(538, 350);
+            this.btnPrint.Location = new System.Drawing.Point(538, 388);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(96, 30);
-            this.btnPrint.TabIndex = 9;
+            this.btnPrint.TabIndex = 8;
             this.btnPrint.Text = "&Print";
             this.btnPrint.UseVisualStyleBackColor = true;
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(538, 388);
+            this.btnClear.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnClear.Location = new System.Drawing.Point(538, 350);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(96, 30);
-            this.btnClear.TabIndex = 10;
+            this.btnClear.TabIndex = 7;
             this.btnClear.Text = "C&lear";
             this.btnClear.UseVisualStyleBackColor = true;
             // 
@@ -229,36 +232,57 @@
             this.btnExit.Location = new System.Drawing.Point(538, 426);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(96, 30);
-            this.btnExit.TabIndex = 11;
+            this.btnExit.TabIndex = 9;
             this.btnExit.Text = "E&xit";
             this.btnExit.UseVisualStyleBackColor = true;
             // 
-            // chbImageVisible
+            // chkImageVisible
             // 
-            this.chbImageVisible.AutoSize = true;
-            this.chbImageVisible.Location = new System.Drawing.Point(26, 473);
-            this.chbImageVisible.Name = "chbImageVisible";
-            this.chbImageVisible.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.chbImageVisible.Size = new System.Drawing.Size(113, 21);
-            this.chbImageVisible.TabIndex = 12;
-            this.chbImageVisible.Text = "Image &Visible";
-            this.chbImageVisible.UseVisualStyleBackColor = true;
+            this.chkImageVisible.AutoSize = true;
+            this.chkImageVisible.Location = new System.Drawing.Point(26, 473);
+            this.chkImageVisible.Name = "chkImageVisible";
+            this.chkImageVisible.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.chkImageVisible.Size = new System.Drawing.Size(113, 21);
+            this.chkImageVisible.TabIndex = 6;
+            this.chkImageVisible.Text = "Image &Visible";
+            this.chkImageVisible.UseVisualStyleBackColor = true;
             // 
-            // pcbDepartment
+            // picDepartment
             // 
-            this.pcbDepartment.Location = new System.Drawing.Point(26, 330);
-            this.pcbDepartment.Name = "pcbDepartment";
-            this.pcbDepartment.Size = new System.Drawing.Size(233, 126);
-            this.pcbDepartment.TabIndex = 13;
-            this.pcbDepartment.TabStop = false;
+            this.picDepartment.Location = new System.Drawing.Point(26, 312);
+            this.picDepartment.Name = "picDepartment";
+            this.picDepartment.Size = new System.Drawing.Size(233, 144);
+            this.picDepartment.TabIndex = 13;
+            this.picDepartment.TabStop = false;
+            // 
+            // rtfWelcome
+            // 
+            this.rtfWelcome.Location = new System.Drawing.Point(286, 205);
+            this.rtfWelcome.Name = "rtfWelcome";
+            this.rtfWelcome.ReadOnly = true;
+            this.rtfWelcome.Size = new System.Drawing.Size(348, 58);
+            this.rtfWelcome.TabIndex = 14;
+            this.rtfWelcome.Text = "";
+            // 
+            // txtPromotion
+            // 
+            this.txtPromotion.Location = new System.Drawing.Point(286, 281);
+            this.txtPromotion.Name = "txtPromotion";
+            this.txtPromotion.ReadOnly = true;
+            this.txtPromotion.Size = new System.Drawing.Size(348, 22);
+            this.txtPromotion.TabIndex = 15;
             // 
             // frmPromotions
             // 
+            this.AcceptButton = this.btnSignIn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnClear;
             this.ClientSize = new System.Drawing.Size(655, 499);
-            this.Controls.Add(this.pcbDepartment);
-            this.Controls.Add(this.chbImageVisible);
+            this.Controls.Add(this.txtPromotion);
+            this.Controls.Add(this.rtfWelcome);
+            this.Controls.Add(this.picDepartment);
+            this.Controls.Add(this.chkImageVisible);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnPrint);
@@ -278,7 +302,7 @@
             this.Text = "Promotions";
             this.grpDepartment.ResumeLayout(false);
             this.grpDepartment.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbDepartment)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDepartment)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -305,8 +329,10 @@
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.CheckBox chbImageVisible;
-        private System.Windows.Forms.PictureBox pcbDepartment;
+        private System.Windows.Forms.CheckBox chkImageVisible;
+        private System.Windows.Forms.PictureBox picDepartment;
+        private System.Windows.Forms.RichTextBox rtfWelcome;
+        private System.Windows.Forms.TextBox txtPromotion;
     }
 }
 
