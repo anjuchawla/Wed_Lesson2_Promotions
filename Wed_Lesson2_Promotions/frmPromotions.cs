@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Wed_Lesson2_Promotions
 {
-    public partial class Form1 : Form
+    public partial class frmPromotions : Form
     {
-        public Form1()
+        public frmPromotions()
         {
             InitializeComponent();
         }
