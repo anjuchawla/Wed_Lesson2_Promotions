@@ -35,11 +35,11 @@
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.grpDepartment = new System.Windows.Forms.GroupBox();
-            this.rdoClothing = new System.Windows.Forms.RadioButton();
-            this.rdoEquipment = new System.Windows.Forms.RadioButton();
-            this.rdoJuiceBar = new System.Windows.Forms.RadioButton();
-            this.rdoMembership = new System.Windows.Forms.RadioButton();
             this.rdoTraining = new System.Windows.Forms.RadioButton();
+            this.rdoMembership = new System.Windows.Forms.RadioButton();
+            this.rdoJuiceBar = new System.Windows.Forms.RadioButton();
+            this.rdoEquipment = new System.Windows.Forms.RadioButton();
+            this.rdoClothing = new System.Windows.Forms.RadioButton();
             this.lblName = new System.Windows.Forms.Label();
             this.lblMemberId = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
@@ -111,41 +111,17 @@
             this.grpDepartment.TabStop = false;
             this.grpDepartment.Text = "Department";
             // 
-            // rdoClothing
+            // rdoTraining
             // 
-            this.rdoClothing.AutoSize = true;
-            this.rdoClothing.Location = new System.Drawing.Point(19, 35);
-            this.rdoClothing.Name = "rdoClothing";
-            this.rdoClothing.Size = new System.Drawing.Size(80, 21);
-            this.rdoClothing.TabIndex = 0;
-            this.rdoClothing.TabStop = true;
-            this.rdoClothing.Text = "&Clothing";
-            this.rdoClothing.UseVisualStyleBackColor = true;
-            this.rdoClothing.CheckedChanged += new System.EventHandler(this.rdoClothing_CheckedChanged);
-            // 
-            // rdoEquipment
-            // 
-            this.rdoEquipment.AutoSize = true;
-            this.rdoEquipment.Location = new System.Drawing.Point(19, 62);
-            this.rdoEquipment.Name = "rdoEquipment";
-            this.rdoEquipment.Size = new System.Drawing.Size(176, 21);
-            this.rdoEquipment.TabIndex = 1;
-            this.rdoEquipment.TabStop = true;
-            this.rdoEquipment.Text = "E&quipment/Accessories";
-            this.rdoEquipment.UseVisualStyleBackColor = true;
-            this.rdoEquipment.CheckedChanged += new System.EventHandler(this.rdoEquipment_CheckedChanged);
-            // 
-            // rdoJuiceBar
-            // 
-            this.rdoJuiceBar.AutoSize = true;
-            this.rdoJuiceBar.Location = new System.Drawing.Point(19, 89);
-            this.rdoJuiceBar.Name = "rdoJuiceBar";
-            this.rdoJuiceBar.Size = new System.Drawing.Size(88, 21);
-            this.rdoJuiceBar.TabIndex = 2;
-            this.rdoJuiceBar.TabStop = true;
-            this.rdoJuiceBar.Text = "&Juice Bar";
-            this.rdoJuiceBar.UseVisualStyleBackColor = true;
-            this.rdoJuiceBar.CheckedChanged += new System.EventHandler(this.rdoJuiceBar_CheckedChanged);
+            this.rdoTraining.AutoSize = true;
+            this.rdoTraining.Location = new System.Drawing.Point(19, 143);
+            this.rdoTraining.Name = "rdoTraining";
+            this.rdoTraining.Size = new System.Drawing.Size(141, 21);
+            this.rdoTraining.TabIndex = 4;
+            this.rdoTraining.TabStop = true;
+            this.rdoTraining.Text = "Personal &Training";
+            this.rdoTraining.UseVisualStyleBackColor = true;
+            this.rdoTraining.CheckedChanged += new System.EventHandler(this.rdoTraining_CheckedChanged);
             // 
             // rdoMembership
             // 
@@ -159,17 +135,41 @@
             this.rdoMembership.UseVisualStyleBackColor = true;
             this.rdoMembership.CheckedChanged += new System.EventHandler(this.rdoMembership_CheckedChanged);
             // 
-            // rdoTraining
+            // rdoJuiceBar
             // 
-            this.rdoTraining.AutoSize = true;
-            this.rdoTraining.Location = new System.Drawing.Point(19, 143);
-            this.rdoTraining.Name = "rdoTraining";
-            this.rdoTraining.Size = new System.Drawing.Size(141, 21);
-            this.rdoTraining.TabIndex = 4;
-            this.rdoTraining.TabStop = true;
-            this.rdoTraining.Text = "Personal &Training";
-            this.rdoTraining.UseVisualStyleBackColor = true;
-            this.rdoTraining.CheckedChanged += new System.EventHandler(this.rdoTraining_CheckedChanged);
+            this.rdoJuiceBar.AutoSize = true;
+            this.rdoJuiceBar.Location = new System.Drawing.Point(19, 89);
+            this.rdoJuiceBar.Name = "rdoJuiceBar";
+            this.rdoJuiceBar.Size = new System.Drawing.Size(88, 21);
+            this.rdoJuiceBar.TabIndex = 2;
+            this.rdoJuiceBar.TabStop = true;
+            this.rdoJuiceBar.Text = "&Juice Bar";
+            this.rdoJuiceBar.UseVisualStyleBackColor = true;
+            this.rdoJuiceBar.CheckedChanged += new System.EventHandler(this.rdoJuiceBar_CheckedChanged);
+            // 
+            // rdoEquipment
+            // 
+            this.rdoEquipment.AutoSize = true;
+            this.rdoEquipment.Location = new System.Drawing.Point(19, 62);
+            this.rdoEquipment.Name = "rdoEquipment";
+            this.rdoEquipment.Size = new System.Drawing.Size(176, 21);
+            this.rdoEquipment.TabIndex = 1;
+            this.rdoEquipment.TabStop = true;
+            this.rdoEquipment.Text = "E&quipment/Accessories";
+            this.rdoEquipment.UseVisualStyleBackColor = true;
+            this.rdoEquipment.CheckedChanged += new System.EventHandler(this.rdoEquipment_CheckedChanged);
+            // 
+            // rdoClothing
+            // 
+            this.rdoClothing.AutoSize = true;
+            this.rdoClothing.Location = new System.Drawing.Point(19, 35);
+            this.rdoClothing.Name = "rdoClothing";
+            this.rdoClothing.Size = new System.Drawing.Size(80, 21);
+            this.rdoClothing.TabIndex = 0;
+            this.rdoClothing.TabStop = true;
+            this.rdoClothing.Text = "&Clothing";
+            this.rdoClothing.UseVisualStyleBackColor = true;
+            this.rdoClothing.CheckedChanged += new System.EventHandler(this.rdoClothing_CheckedChanged);
             // 
             // lblName
             // 
@@ -283,6 +283,7 @@
             this.txtPromotion.ReadOnly = true;
             this.txtPromotion.Size = new System.Drawing.Size(348, 22);
             this.txtPromotion.TabIndex = 15;
+            this.txtPromotion.Text = resources.GetString("txtPromotion.Text");
             // 
             // printForm1
             // 
